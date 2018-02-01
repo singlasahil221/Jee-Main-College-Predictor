@@ -25,7 +25,7 @@ SECRET_KEY = '=g)2_)jq+s+lt8jl1h*+n^dzhj#pa0kp+6zs9exdr$&v5kh_-t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 PROJECT_DIR = os.path.dirname(__file__)
 # Application definition
