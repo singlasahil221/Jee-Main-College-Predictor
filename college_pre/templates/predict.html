@@ -30,7 +30,7 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 50%;
+    width: 30%;
 }
 
 /* The Close Button */
@@ -75,8 +75,8 @@
   </tr>
     {%for i in branche%}
 	<tr>
-    <td><div style = "float:left;text-align: center; width:100%; border: solid 2px #fff; color:#fff; font-color: #ffffff; height: 30px;">{{i.branch}} </div> </td>
-   <td><div style = " float:left;text-align: center; width:250%; border: solid 2px #fff; border-left:0px; color:#fff; font-color: #ffffff; height: 30px; "><a style="text-decoration: none;color:#fff;" href="{{i.college.link}}">{{ i.college.name }}</a></div></td>
+    <td><div class="responsive" style = "float:left;text-align: center; width:100%; border: solid 2px #fff; color:#fff; font-color: #ffffff; height: 100%;">{{i.branch}} </div> </td>
+   <td><div class="responsive" style = " float:left;text-align: center; width:100%; border: solid 2px #fff; border-left:0px; color:#fff; font-color: #ffffff; height:100%; "><a style="text-decoration: none;color:#fff;" href="{{i.college.link}}">{{ i.college.name }}</a></div></td>
 </tr>
     
 {% endfor %}
