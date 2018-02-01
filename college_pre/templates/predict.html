@@ -1,0 +1,117 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>College Predictor | DGW</title>
+	<style>
+        :required  {  
+     
+     box-shadow: none;
+    }
+	input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {  -webkit-appearance: none;  margin: 0; }
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body style="background: url('{%static 'images/bg.jpg'%}'); align-content: center; background-size: cover;">
+	<div style="opacity:0.7;text-align:center;align-content: center; border: solid 2px black; background-color: #000; border-radius: 5px; padding: 5%; position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+<form method="post" action="/home/">
+    <h1 style="color:#fff">Enter the details</h1>
+    {% csrf_token %}
+    <input type="number" name="rank" placeholder="Rank" style = "-moz-appearance: textfield;width: 97%; height:30%; border:0px; border-bottom: solid 1px #808080; background-color: #000; color: #fff; font-weight: bold; padding : 2%; margin : 8%;" required><br>
+    <select type="text" name="category" class = "dropdown" style="color:#000000; width: 97%; height:30%; padding:2%;margin : 8%;font-weight: bold"><option value="General" class="list">General</option><option value="OBC NCL" class="list">OBC NCL</option><option value="SC" class="list">SC</option><option value="ST" class="list">ST</option></select>
+	<button style="background-color: #808080; font-size: 16px; padding: 12px 28px;border-radius: 8px; margin:7px;">Submit</button>
+
+</form>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal" >
+
+  <!-- Modal content -->
+  <div class="modal-content" style="background-color: #000;color:Yellow;opacity:0.8;">
+
+    <span class="close">&times;</span>
+  	{% if branche %}
+<table >
+  		<tr>
+    <th>Branch</th>
+    <th>College</th>
+  </tr>
+    {%for i in branche%}
+	<tr>
+    <td><div style = "float:left;text-align: center; width:100%; border: solid 2px #fff; color:#fff; font-color: #ffffff; height: 30px;">{{i.branch}} </div> </td>
+   <td><div style = " float:left;text-align: center; width:250%; border: solid 2px #fff; border-left:0px; color:#fff; font-color: #ffffff; height: 30px; "><a style="text-decoration: none;color:#fff;" href="{{i.college.link}}">{{ i.college.name }}</a></div></td>
+</tr>
+    
+{% endfor %}
+
+{%else%}
+Sorry! No matches For You.
+{%endif%}
+</table>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+var res = "{{ err }}"
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+if(res.length>1) {
+    modal.style.display = "block";
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

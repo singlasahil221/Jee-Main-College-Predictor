@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Forms </title>
+	<link rel = "stylesheet" type = "text/css" href = "{% static 'css/style.css' %}">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class = "container">
+<form action="/" method="POST">
+	{%csrf_token %}
+   	<div class = "main1">
+   	<input type="text" name="name" placeholder="college"><br>
+   	<input type = "url" name = "link" placeholder = "link"><br>
+   	<input type = "text" name = "branch[]" id = "question0" placeholder = "branch"><br>
+   	<input type = "text" name = "category[]" id = "question1" placeholder = "category">
+   	<input type = "number" name = "rank[]" id = "question1" placeholder = "ranks"><br>
+   	<input type = "text" name = "category[]" id = "question2" placeholder = "category">
+   	<input type = "number" name = "rank[]" id = "question2" placeholder = "ranks"><br>
+   	<input type = "text" name = "category[]" id = "question3" placeholder = "category">
+   	<input type = "number" name = "rank[]" id = "question3" placeholder = "ranks"><br>
+   	<input type = "text" name = "category[]" id = "question4" placeholder = "category">
+   	<input type = "number" name = "rank[]" id = "question4" placeholder = "ranks"><br>
+	<br>
+	</div>
+	<a href="#" title="" class="add-field">Add Field</a>
+	<button type = "submit" value="submit" class = "submit">Submit</button>
+</form>
+{% if err %}
+ {{err}}
+ {% endif %}	
+ {%if blank %}
+ {{err}}
+{% endif %}	
+</div>
+
+<script type="text/javascript" src = "{% static 'js/script.js' %}"></script>
+</body>
+</html>
