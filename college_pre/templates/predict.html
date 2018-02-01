@@ -51,7 +51,7 @@
 </head>
 <body style="background: url('{%static 'images/bg.jpg'%}'); align-content: center; background-size: cover;">
 	<div style="opacity:0.7;text-align:center;align-content: center; border: solid 2px black; background-color: #000; border-radius: 5px; padding: 5%; position:absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
-<form method="post" action="/home/">
+<form method="post" action="/">
     <h1 style="color:#fff">Enter the details</h1>
     {% csrf_token %}
     <input type="number" name="rank" placeholder="Rank" style = "-moz-appearance: textfield;width: 97%; height:30%; border:0px; border-bottom: solid 1px #808080; background-color: #000; color: #fff; font-weight: bold; padding : 2%; margin : 8%;" required><br>
