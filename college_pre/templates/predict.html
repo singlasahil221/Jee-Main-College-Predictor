@@ -55,7 +55,7 @@
 <form method="post" action="/">
     <h1 style="color:#fff">Enter the details</h1>
     {% csrf_token %}
-    <input type="number" name="rank" placeholder="Rank" style = "-moz-appearance: textfield;width: 97%; height:30%; border:0px; border-bottom: solid 1px #808080; background-color: #000; color: #fff; font-weight: bold; padding : 2%; margin : 8%;" required><br>
+    <input type="number" name="rank" placeholder="Rank" min="1" max="999999" style = "-moz-appearance: textfield;width: 97%; height:30%; border:0px; border-bottom: solid 1px #808080; background-color: #000; color: #fff; font-weight: bold; padding : 2%; margin : 8%;" required><br>
     <select type="text" name="category" class = "dropdown" style="color:#000000; width: 97%; height:30%; padding:2%;margin : 8%;font-weight: bold"><option value="General" class="list">General</option><option value="OBC NCL" class="list">OBC NCL</option><option value="SC" class="list">SC</option><option value="ST" class="list">ST</option></select>
 	<button style="background-color: #808080; font-size: 16px; padding: 12px 28px;border-radius: 8px; margin:7px;">Submit</button>
 
