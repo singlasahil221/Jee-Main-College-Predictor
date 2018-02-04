@@ -41,7 +41,7 @@ def predictor(request):
 		categorys = request.POST['category']
 		categorys = str(categorys)
 		categoryq=category.objects.get(category=categorys)
-		k=branch.objects.filter(category=categoryq ,rank__gte=rank)
+		k=branch.objects.filter(category=categoryq ,rank__gte=rank).order_by('rank')
 		err = 'Success!'
 	else:
 		pass
