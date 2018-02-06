@@ -22,9 +22,10 @@ def home(request):
 		j,k=0,0
 		branches = request.POST.getlist('branch[]')
 		ranks = request.POST.getlist('rank[]')
-		category = request.POST.getlist('category[]')
+		categorys = request.POST.getlist('category[]')
 		for i in branches:
-			a.branch_set.create(branch = i,rank=ranks[j],category = category[j])
+			categorya = category.objects.get(category = categorys[j])
+			a.branch_set.create(branch = i,rank=ranks[j],category = categorya)
 			j+=1
 			a.save()			
 		err = 'Successful'
