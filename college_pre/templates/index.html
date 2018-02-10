@@ -12,37 +12,37 @@
 <form action="/home/" method="POST">
 	{%csrf_token %}
    	<div class = "main1">
-   	<input type="text" name="name" placeholder="college"><br>
-   	<input type = "url" name = "link" placeholder = "link"><br>
-   	<input type = "text" name = "branch[]" id = "question0" placeholder = "branch"><br>
+   	<input type="text" name="name" placeholder="college" required><br>
+   	<input type = "url" name = "link" placeholder = "link" required><br>
+   	<input type = "text" name = "branch[]" id = "question0" placeholder = "branch" required><br>
    	<select>
   <option value="General">General</option>
   <option value="OBC NCL">OBC NCL</option>
   <option value="SC">SC</option>
   <option value="ST">ST</option>
 </select>
-   	<input type = "number" name = "rank[]" id = "question1" placeholder = "ranks"><br>
+   	<input type = "number" name = "rank[]" id = "question1" placeholder = "ranks" required><br>
    	<select>
   <option value="General">General</option>
   <option value="OBC NCL">OBC NCL</option>
   <option value="SC">SC</option>
   <option value="ST">ST</option>
 </select>
-   	<input type = "number" name = "rank[]" id = "question2" placeholder = "ranks"><br>
+   	<input type = "number" name = "rank[]" id = "question2" placeholder = "ranks"  required><br>
 		<select>
   <option value="General">General</option>
   <option value="OBC NCL">OBC NCL</option>
   <option value="SC">SC</option>
   <option value="ST">ST</option>
 </select>
-   	<input type = "number" name = "rank[]" id = "question3" placeholder = "ranks"><br>
+   	<input type = "number" name = "rank[]" id = "question3" placeholder = "ranks" required><br>
    	<select>
   <option value="General">General</option>
   <option value="OBC NCL">OBC NCL</option>
   <option value="SC">SC</option>
   <option value="ST">ST</option>
 </select>
-   	<input type = "number" name = "rank[]" id = "question4" placeholder = "ranks"><br>
+   	<input type = "number" name = "rank[]" id = "question4" placeholder = "ranks" required><br>
 	<br>
 	</div>
 	<a href="#" title="" class="add-field">Add Field</a>
