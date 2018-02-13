@@ -25,8 +25,8 @@ def home(request):
 		categorys = request.POST.getlist('category[]')
 		k=0
 		for i in branches:
-			for j in categorys:
-				categorya = category.objects.get(category = j)
+			for j in range(0,4):
+				categorya = category.objects.get(category =categorys[k])
 				a.branch_set.create(branch = i,rank=ranks[k],category = categorya)
 				k+=1
 				a.save()			
